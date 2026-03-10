@@ -10,7 +10,7 @@
     --bg-color: #080808;
     --second-bg-color: #101010;
     --text-color: white;
-    --main-color: #0374dd;
+    --main-color: #ff4800;
 }
 html {
     font-size: 60%;
@@ -52,8 +52,8 @@ body{
 span{
     background: linear-gradient(
         100deg,
-        #0374dd 10%,
-        #43a0f7 100%
+        #ff4800 10%,
+        #ff946a 100%
     );
     background-clip: text;
     color: transparent;
@@ -77,8 +77,8 @@ span{
     border-radius: 3rem;
     background: linear-gradient(
         100deg,
-        #0374dd 10%,
-        #43a0f7
+        #ff4800 10%,
+        #ff946a
     );
     letter-spacing: 1px;
     cursor: pointer;
@@ -338,4 +338,79 @@ section{
     font-size: 1.4rem;
     line-height: 1.5;
     max-width: 280px;
+}
+
+.contato{
+    background-color: var(--bg-color);
+}
+.contato h2{
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+.contato form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 5rem 0;
+    text-align: center;
+}
+.contato form .input-box input,
+.contato form textarea{
+    width: 100%;
+    padding: 2.5rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border-radius: 2rem;
+    border: 2px solid var(--main-color);
+    margin: 1.5rem 0;
+    resize: none;
+}
+
+footer{
+    background-color: var(--second-bg-color);
+    padding: 50px 0; 
+}
+.footer .social-icons{
+    text-align: center;
+}
+.footer ul{
+    text-align: center;
+    font-size: 1.8rem;
+}
+.footer ul li{
+    display: inline-block;
+    margin-left: 20px;
+}
+.footer ul li a{
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.03s ease-in-out;
+}
+.footer ul li a:hover{
+    border-bottom: 3px solid var(--main-color);
+}
+.footer .copyright{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+@media(max-width:1285px){
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 3rem;
+        background: rgba(0, 0, 0, 0.8);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        display: none;
+    }
 }
