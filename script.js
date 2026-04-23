@@ -1,7 +1,27 @@
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x')
-    navbar.classList.toggle('active');
+if (menuIcon && navbar) {
+
+    menuIcon.addEventListener('click', (e) => {
+        e.stopPropagation(); // 🔥 evita conflito com document
+        menuIcon.classList.toggle('bx-x');
+        navbar.classList.toggle('active');
+    });
+
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!menuIcon.contains(e.target) && !navbar.contains(e.target)) {
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        }
+    });
 }
